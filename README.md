@@ -1,6 +1,6 @@
 # Trepte
 
-Zece ani de recenzii din Rafturi și Sublinieri, 2016–2026, an de an: ce am citit, cum am scris și la ce a folosit scrisul.
+Zece ani de recenzii din Rafturi și Sublinieri, 2016–2026: ce am citit, cum am scris și la ce a folosit totul.
 
 Pagina: https://ducu.github.io/trepte/
 
