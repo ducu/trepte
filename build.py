@@ -49,10 +49,14 @@ for y in years:
 def num(n):
     return f'{n:,}'.replace(',', '.')
 
+def count(n, word):
+    # Romanian puts "de" after numbers ending in 20-99 or 00: 19 cărți, 20 de cărți, 109 cărți
+    return f'<b>{num(n)}</b> ' + ('de ' if n % 100 >= 20 or (n and n % 100 == 0) else '') + word
+
 def stats(y):
     r = rows[y]
-    return (f'<p class="stats"><b>{r["books"]}</b> cărți · <b>{r["reviewed"]}</b> recenzii · '
-            f'<b>{num(r["words"])}</b> cuvinte · <b>{r["quotes"]}</b> sublinieri</p>')
+    return ('<p class="stats">' + ' · '.join([count(r['books'], 'cărți'), count(r['reviewed'], 'recenzii'),
+                                               count(r['words'], 'cuvinte'), count(r['quotes'], 'sublinieri')]) + '</p>')
 
 out = open(os.path.join(HERE, 'template.html')).read()
 for y in years:
